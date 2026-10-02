@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "category": "residential",
+      "name": "3 BED BUNGALOW",
+      "location": "",
+      "description": "",
+      "order": 1,
+      "images": [
+        {
+          "image": "/assets/img/uploads/3-bed-bungalow-ground-floor-plan.jpg",
+          "full": "/assets/img/uploads/3-bed-bungalow-ground-floor-plan-full.jpg",
+          "caption": "Ground Floor Plan"
+        }
+      ]
+    }
+  ]
+}

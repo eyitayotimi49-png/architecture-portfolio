@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eyitayo Timilehin — Architectural Portfolio</title>
+  <meta name="description" content="Eyitayo Timilehin, Architect: residential, mixed-use and public building designs, with contact details.">
+  <meta name="theme-color" content="#f4efe7">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Eyitayo Timilehin — Architectural Portfolio">
+  <meta property="og:description" content="Residential, mixed-use and public building designs.">
+  <meta property="og:image" content="assets/img/hero-sydney-opera-house-1280.jpg">
+  <meta property="og:url" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="site">
+  <a class="skip" href="#work">Skip to projects</a>
+
+  <header class="topbar" id="top">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="index.html" aria-label="Back to welcome page"><span data-config="name">Eyitayo Timilehin</span></a>
+      <nav class="topnav" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="intro wrap" aria-labelledby="intro-title">
+    <p class="eyebrow">Architectural Portfolio</p>
+    <h1 class="intro__title" id="intro-title"><span data-config="name">Eyitayo Timilehin</span></h1>
+    <p class="intro__role"><span data-config="title">Architect</span><span class="intro__loc" data-config="location" hidden></span></p>
+    <p class="intro__tagline" data-config="tagline">Residential · Mixed Use · Public Buildings</p>
+  </section>
+
+  <main class="work" id="work" aria-label="Projects">
+    <div class="filters">
+      <div class="wrap filters__inner" role="tablist" aria-label="Filter projects by category">
+        <button class="filter is-active" role="tab" aria-selected="true" data-filter="all">All <sup class="count" data-count="all"></sup></button>
+        <button class="filter" role="tab" aria-selected="false" data-filter="residential">Residential <sup class="count" data-count="residential"></sup></button>
+        <button class="filter" role="tab" aria-selected="false" data-filter="mixed-use">Mixed Use <sup class="count" data-count="mixed-use"></sup></button>
+        <button class="filter" role="tab" aria-selected="false" data-filter="public">Public Buildings <sup class="count" data-count="public"></sup></button>
+      </div>
+    </div>
+    <div class="wrap categories" id="categories" aria-live="polite">
+      <noscript><p class="soon__text">Please enable JavaScript to view the projects.</p></noscript>
+    </div>
+  </main>
+
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap about__inner">
+      <div class="about__head">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title" class="section-title">Practice &amp; <em>approach</em></h2>
+      </div>
+      <div class="about__bio" id="bio"></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--light">Contact</p>
+      <h2 id="contact-title" class="section-title section-title--light">Let&rsquo;s build something <em>together</em>.</h2>
+      <div class="contact__grid">
+        <div class="contact__block">
+          <h3>Name</h3>
+          <p data-config="name">Eyitayo Timilehin</p>
+          <p class="muted" data-config="title">Architect</p>
+        </div>
+        <div class="contact__block">
+          <h3>Email</h3>
+          <p><a id="c-email" href="mailto:eyitayotimi49@gmail.com">eyitayotimi49@gmail.com</a></p>
+        </div>
+        <div class="contact__block">
+          <h3>Phone</h3>
+          <p><a id="c-phone" href="tel:+2348134474391">+234 813 447 4391</a></p>
+        </div>
+        <div class="contact__block" id="c-loc-block" hidden>
+          <h3>Based in</h3>
+          <p data-config="location"></p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer wrap">
+      <p>&copy; <span id="year">2026</span> <span data-config="name">Eyitayo Timilehin</span>. All rights reserved.</p>
+      <p><a href="#top">Back to top ↑</a> &nbsp;·&nbsp; <a href="index.html">Welcome page</a></p>
+    </footer>
+  </section>
+
+  <!-- Folder detail view -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <div class="lightbox__panel">
+      <button class="lb-close" data-close aria-label="Close folder">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="1.2"/></svg>
+      </button>
+      <div class="lb-media">
+        <figure class="lb-stage" id="lb-stage">
+          <img id="lb-img" src="" alt="">
+          <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous picture">&#8592;</button>
+          <button class="lb-nav lb-next" id="lb-next" aria-label="Next picture">&#8594;</button>
+          <div class="lb-tools">
+            <button id="lb-zoom" aria-pressed="false">Zoom</button>
+            <a id="lb-full" href="#" target="_blank" rel="noopener">Full size ↗</a>
+          </div>
+          <figcaption class="lb-caption"><span id="lb-caption"></span><span class="lb-counter" id="lb-counter"></span></figcaption>
+        </figure>
+        <div class="lb-thumbs" id="lb-thumbs" role="list"></div>
+      </div>
+      <article class="lb-info">
+        <p class="eyebrow" id="lb-cat"></p>
+        <h2 id="lb-title"></h2>
+        <dl class="lb-meta" id="lb-meta"></dl>
+        <div class="lb-desc" id="lb-desc"></div>
+        <p class="lb-list-label">Pictures in this folder</p>
+        <ol class="lb-list" id="lb-list" aria-label="Pictures in this folder"></ol>
+        <div class="lb-projnav">
+          <button id="lb-prevproj">&larr; Previous folder</button>
+          <button id="lb-nextproj">Next folder &rarr;</button>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

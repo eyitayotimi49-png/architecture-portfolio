@@ -1,0 +1,78 @@
+# Decap CMS configuration: the no-code editor at /admin
+backend:
+  name: github
+  repo: eyitayotimi49-png/architecture-portfolio
+  branch: main
+  commit_messages:
+    update: "Update {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Delete “{{path}}”"
+
+# Lets you test the editor on your own computer with `npx decap-server` (ignored on the live site).
+local_backend: true
+
+site_url: /
+display_url: /
+logo_url: /assets/img/favicon.svg
+
+media_folder: assets/img/uploads      # where uploaded pictures are saved in the repository
+public_folder: /assets/img/uploads    # how the website refers to them
+
+editor:
+  preview: false
+
+collections:
+  - name: portfolio
+    label: Portfolio
+    description: "Edit your project folders and their pictures, or your contact details."
+    editor:
+      preview: false
+    files:
+      - name: folders
+        label: "Projects (folders and pictures)"
+        file: content/portfolio.json
+        fields:
+          - label: Folders
+            name: folders
+            widget: list
+            label_singular: Folder
+            allow_add: true
+            collapsed: true
+            summary: "{{fields.name}}  ·  {{fields.category}}"
+            hint: "Each folder is one project. Drag folders to reorder them. Use the category to file a folder under Residential, Mixed Use or Public Buildings."
+            fields:
+              - label: Category
+                name: category
+                widget: select
+                default: residential
+                options:
+                  - { label: "Residential", value: "residential" }
+                  - { label: "Mixed Use", value: "mixed-use" }
+                  - { label: "Public Buildings", value: "public" }
+              - { label: "Folder name", name: name, widget: string, hint: "e.g. 3 BED BUNGALOW" }
+              - { label: "Location", name: location, widget: string, required: false, hint: "Optional. Leave empty to hide it." }
+              - { label: "Short description", name: description, widget: text, required: false, hint: "Optional. Leave empty to hide it." }
+              - { label: "Order", name: order, widget: number, value_type: int, required: false, hint: "Optional. Lower numbers appear first within a category. Leave empty to use the order of this list." }
+              - label: Pictures
+                name: images
+                widget: list
+                label_singular: Picture
+                allow_add: true
+                summary: "{{fields.caption}}"
+                hint: "Drag pictures to reorder them. The first picture is the folder cover. To move a picture to another folder, add it there (choose it from the media library) and remove it here."
+                fields:
+                  - { label: "Picture", name: image, widget: image, choose_url: false, hint: "JPG or PNG. About 2000 px wide is ideal." }
+                  - { label: "Caption", name: caption, widget: string, required: false, hint: "e.g. Ground Floor Plan" }
+                  - { label: "Full-resolution file (optional)", name: full, widget: image, required: false, choose_url: false, hint: "Optional larger version that opens when a viewer zooms in." }
+
+      - name: site
+        label: "Your details (name, email, phone, bio)"
+        file: content/site.json
+        fields:
+          - { label: "Name", name: name, widget: string }
+          - { label: "Title", name: title, widget: string, default: "Architect" }
+          - { label: "Email", name: email, widget: string }
+          - { label: "Phone", name: phone, widget: string, hint: "Include the country code, e.g. +234…" }
+          - { label: "Location", name: location, widget: string, required: false, hint: "Optional. Leave empty to hide it." }
+          - { label: "Tagline (under your name)", name: tagline, widget: string, required: false }
+          - { label: "Bio", name: bio, widget: text, hint: "Leave a blank line between paragraphs." }

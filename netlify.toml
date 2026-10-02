@@ -1,0 +1,21 @@
+# Netlify settings: a static site with no build step.
+[build]
+  publish = "."
+  command = ""
+
+# Always fetch fresh content so edits made in /admin show up right after Netlify redeploys.
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
